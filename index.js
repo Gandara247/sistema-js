@@ -2,11 +2,12 @@ import receitasTextos from './src/common/receitas-textos.js'
 import crypto from 'node:crypto';
 import { criarReceita } from './src/common/utils/criar-receitas.js';
 import { exibirReceitas } from './src/common/utils/exibir-receitas.js';
+import { deletarReceita } from './src/common/utils/deletar-receita.js';
 const uuid = crypto.randomUUID();
 const nomeEmpresa = 'Gama';
-
+ 
 global.receitas = [{
-    id:uuid,
+    id:'3c52fd82-f706-4b08-a5f4-d6b99f885c6c',
     titulo:'Risoto de Abobora',
     nivelDificuldade:'simples',
     ingredientes: receitasTextos.ingredientesRisoto,
@@ -26,5 +27,6 @@ criarReceita({
     vegana: false,
 });
 
+deletarReceita("3c52fd82-f706-4b08-a5f4-d6b99f885c6c");
 exibirReceitas();
 console.log(receitas);
